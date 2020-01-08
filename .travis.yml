@@ -6,4 +6,4 @@ before_install:
   - docker build -t temporary_name -f Dockerfile.dev .
 
 script:
-  - docker run temporary_name npm run test --watchAll=false -- --coverage
+  - docker run -e CI=true temporary_name npm run test -- --coverage
