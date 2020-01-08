@@ -1,4 +1,4 @@
-sudo: required
+language: node_js
 services:
   - docker
 
@@ -6,4 +6,4 @@ before_install:
   - docker build -t temporary_name -f Dockerfile.dev .
 
 script:
-  - docker run temporary_name npm run test -- --coverage
+  - docker run temporary_name CI=true npm run test -- --coverage
